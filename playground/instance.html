@@ -1,0 +1,25 @@
+<!-- vue는 생성자 함수안에 여러 api들을 미리 생성해놓았고, 우리는 그 api들을 사용함! -->
+<!-- 인스턴스는 생성자 함수에 의해 생성되어 변수에 할당된 object를 가르킨다. -->
+<!-- 생성자함수: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function -->
+<!-- 프로토타입: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					message: "hi",
+				},
+			});
+		</script>
+	</body>
+</html>
