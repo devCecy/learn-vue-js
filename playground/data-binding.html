@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<p v-bind:id="uuid" v-bind:class="name">{{num}}</p>
+			<p>{{doubleNum}}</p>
+			<div v-if="loading">Loading...</div>
+			<div v-else>Loaded</div>
+			<!-- v-show는 elements를 없애는게 아니라 스타일 display:none 속성을 주는것  -->
+			<div v-show="loading">Loading...</div>
+			<!-- v-model은 v-bind와 v-on을 조합한 것이다 -->
+			<input type="text" v-model="message" />
+			<p>{{message}}</p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					num: 10,
+					uuid: "abc1234",
+					name: "text-blue",
+					loading: true,
+					message: "",
+				},
+				// 의존적인 data 값을 미리 계산할 수 있다.
+				computed: {
+					doubleNum: function () {
+						return this.num * 2;
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
